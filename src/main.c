@@ -10,15 +10,7 @@
 #include <libopencm3/stm32/gpio.h>
 #include <libopencm3/cm3/common.h>
 
-extern void vApplicationStackOverflowHook(
-	xTaskHandle *pxTask,
-	signed portCHAR *pcTaskName);
-
-void
-vApplicationStackOverflowHook(
-  xTaskHandle *pxTask __attribute((unused)),
-  signed portCHAR *pcTaskName __attribute((unused))
-) {
+void vApplicationStackOverflowHook( TaskHandle_t xTask, char * pcTaskName ){
 	for(;;);	// Loop forever here..
 }
 
