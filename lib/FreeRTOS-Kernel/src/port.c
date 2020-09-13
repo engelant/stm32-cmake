@@ -1,1 +1,1 @@
-../FreeRTOS-Kernel/portable/GCC/ARM_CM3/port.c
+../FreeRTOS-Kernel/portable/GCC/ARM_CM7/r0p1/port.c

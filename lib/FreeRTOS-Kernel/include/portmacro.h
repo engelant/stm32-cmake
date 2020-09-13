@@ -1,1 +1,1 @@
-../FreeRTOS-Kernel/portable/GCC/ARM_CM3/portmacro.h
+../FreeRTOS-Kernel/portable/GCC/ARM_CM7/r0p1/portmacro.h

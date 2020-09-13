@@ -38,16 +38,15 @@ regions[] = {
 int
 main(void) {
 
-	rcc_clock_setup_in_hse_8mhz_out_72mhz(); // For "blue pill"
+	rcc_clock_setup_hse(&rcc_3v3[RCC_CLOCK_3V3_216MHZ], 8);
 
 	lwmem_assignmem(regions, sizeof(regions) / sizeof(regions[0]));
 
-	rcc_periph_clock_enable(RCC_GPIOC);
-	gpio_set_mode(
-		GPIOC,
-		GPIO_MODE_OUTPUT_2_MHZ,
-		GPIO_CNF_OUTPUT_PUSHPULL,
-		GPIO13);
+	
+
+	rcc_periph_clock_enable(RCC_GPIOB);
+	gpio_mode_setup(GPIOB, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO7);
+	gpio_set_output_options(GPIOB, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, GPIO7);
 
 	xTaskCreate(task1,"LED",100,NULL,configMAX_PRIORITIES-1,NULL);
 	vTaskStartScheduler();

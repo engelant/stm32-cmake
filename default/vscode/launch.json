@@ -11,11 +11,11 @@
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
-            "svdFile": "${workspaceRoot}/STM32F103.svd",
+            "svdFile": "${workspaceRoot}/stm32f7x7.svd",
             "rtos": "FreeRTOS",
             "configFiles": [
-                "interface/cmsis-dap.cfg",
-                "target/stm32f1x.cfg"
+                "interface/stlink-v2-1.cfg",
+                "target/stm32f7x.cfg"
             ]
         }
     ]
