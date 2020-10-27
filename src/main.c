@@ -11,6 +11,7 @@
 #include <libopencm3/stm32/gpio.h>
 #include <libopencm3/cm3/common.h>
 
+
 void vApplicationMallocFailedHook( void ) {
 	for(;;);
 }

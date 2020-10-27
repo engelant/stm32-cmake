@@ -132,6 +132,8 @@ standard names. */
 #define vPortSVCHandler SVC_Handler
 #define xPortSysTickHandler SysTick_Handler
 
+/* Define configASSERT() to disable interrupts and sit in a loop. */
+#define configASSERT(x)		if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
 
 #endif /* FREERTOS_CONFIG_H */
 
