@@ -6,16 +6,14 @@
     "configurations": [
         {
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/stm32-cmake.elf",
+            "executable": "${workspaceRoot}/build/stm32f7x7-cmake.elf",
             "name": "Debug Microcontroller",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
             "svdFile": "${workspaceRoot}/stm32f7x7.svd",
-            "rtos": "FreeRTOS",
             "configFiles": [
-                "interface/stlink-v2-1.cfg",
-                "target/stm32f7x.cfg"
+                "stm32f7.openocd"
             ]
         }
     ]

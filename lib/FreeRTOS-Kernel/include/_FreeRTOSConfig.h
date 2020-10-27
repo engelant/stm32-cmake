@@ -1,5 +1,5 @@
 /*
- * FreeRTOS Kernel V10.4.1
+ * FreeRTOS Kernel V10.4.0
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -56,7 +56,7 @@
 #define configMAX_TASK_NAME_LEN					( 10 )
 #define configUSE_TRACE_FACILITY				1
 #define configUSE_16_BIT_TICKS					0
-#define configIDLE_SHOULD_YIELD					1
+#define configIDLE_SHOULD_YIELD					0
 #define configUSE_MUTEXES						1
 #define configQUEUE_REGISTRY_SIZE				8
 #define configCHECK_FOR_STACK_OVERFLOW			2
@@ -93,7 +93,7 @@ FreeRTOS/Source/tasks.c for limitations. */
 to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet		1
 #define INCLUDE_uxTaskPriorityGet		1
-#define INCLUDE_vTaskDelete				0
+#define INCLUDE_vTaskDelete				1
 #define INCLUDE_vTaskCleanUpResources	1
 #define INCLUDE_vTaskSuspend			1
 #define INCLUDE_vTaskDelayUntil			1
@@ -131,7 +131,6 @@ standard names. */
 #define xPortPendSVHandler PendSV_Handler
 #define vPortSVCHandler SVC_Handler
 #define xPortSysTickHandler SysTick_Handler
-
 
 #endif /* FREERTOS_CONFIG_H */
 
