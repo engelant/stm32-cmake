@@ -1,7 +1,3 @@
-/* Simple LED task demo, using timed delays:
- *
- * The LED on PC13 is toggled in task1.
- */
 #include "FreeRTOS.h"
 #include "task.h"
 //#include "lwmem/lwmem.h"
@@ -63,5 +59,3 @@ main(void) {
 	for (;;);
 	return 0;
 }
-
-// End
