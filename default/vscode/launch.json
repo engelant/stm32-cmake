@@ -12,6 +12,7 @@
             "type": "cortex-debug",
             "servertype": "openocd",
             "svdFile": "${workspaceRoot}/stm32f7x7.svd",
+            "rtos": "FreeRTOS",
             "configFiles": [
                 "stm32f7.openocd"
             ]

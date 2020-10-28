@@ -94,9 +94,9 @@ to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet		1
 #define INCLUDE_uxTaskPriorityGet		1
 #define INCLUDE_vTaskDelete				0
-#define INCLUDE_vTaskCleanUpResources	1
-#define INCLUDE_vTaskSuspend			1
-#define INCLUDE_vTaskDelayUntil			1
+#define INCLUDE_vTaskCleanUpResources	0
+#define INCLUDE_vTaskSuspend			0
+#define INCLUDE_vTaskDelayUntil			0
 #define INCLUDE_vTaskDelay				1
 #define INCLUDE_eTaskGetState			1
 #define INCLUDE_xTimerPendFunctionCall	1
@@ -126,11 +126,10 @@ to all Cortex-M ports, and do not rely on any particular library functions. */
 See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY 	( configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY << (8 - configPRIO_BITS) )
 
-/* Definitions that map the FreeRTOS port interrupt handlers to their CMSIS
-standard names. */
-#define xPortPendSVHandler PendSV_Handler
-#define vPortSVCHandler SVC_Handler
-#define xPortSysTickHandler SysTick_Handler
+// Map FreeRTOS handlers to their libopencm3 names (not CMSIS names)
+#define xPortPendSVHandler pend_sv_handler
+#define vPortSVCHandler sv_call_handler
+#define xPortSysTickHandler sys_tick_handler
 
 /* Define configASSERT() to disable interrupts and sit in a loop. */
 #define configASSERT(x)		if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }

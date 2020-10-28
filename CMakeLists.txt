@@ -38,7 +38,7 @@ execute_process(COMMAND ${GENLINK_CMD} FPU COMMAND cut -d "-" -f2- COMMAND tr -d
 # Flags which are required for gcc, g++ and as.
 set(CFLAGS_CORTEX "-mthumb -mcpu=${MCPU} -mfpu=${MFPU} -mfloat-abi=${MFPU_ABI} -fno-common -ffunction-sections -fdata-sections")
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CFLAGS_CORTEX} ${CFLAGS_WARNING}")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CFLAGS_CORTEX} ${CFLAGS_WARNING} -O0 -g3")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CFLAGS_CORTEX} ${CXXFLAGS_WARNING}")
 set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${CFLAGS_CORTEX}")
 
